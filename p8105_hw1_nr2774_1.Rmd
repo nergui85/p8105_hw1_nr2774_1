@@ -5,9 +5,18 @@ date: 2022-09-22
 output: github_document
 ---
 
-# Problem_1 ####
+# Problem_1 
+
+
+```{r}
+#Loading in relevant packages. 
+library(tidyverse)
+```
+
 
 ```{r problem_1}
+# Discription of the dataset 
+
 data("penguins", package = "palmerpenguins")
 penguins
 
@@ -15,20 +24,20 @@ nrow(penguins)
 
 ncol(penguins)
 
-df = penguins
-
-mean (df$flipper_length_mm, na.rm = TRUE)
+mean(pull(penguins,flipper_length_mm), na.rm = TRUE)
 
 ```
 
-- Data in this dataset is about penguins which are Adeilie types and are from island called Torgersen. 
-Valeues are included bill length, bill depth, flipper length and body mass , sex, and year. 
+Data in this dataset is about penguins. There are three type of penquins Adeilie,Chinstrap and Gentoo.These are from an island called Torgersen. 
 
-- The number of rows are 344
-  The number of colums are 8 
-  The mean flipper length is 200.9152
+Values are included as bill length, bill depth, flipper length and body
+mass , sex, and year. 
 
-```{r problem_1_1}
+The number of rows are 344 `
+The number of colums are 8 
+The mean flipper length is 200.9152
+
+```{r scatterplot}
 library(tidyverse)
 scatterplot = ggplot(penguins, aes(x = bill_length_mm,
                                    y = flipper_length_mm, 
@@ -39,9 +48,16 @@ scatterplot
 ggsave("HW1scatterplot.pdf", plot = scatterplot )
 ```
 
+Adelie (species) was indicated as Red dots.
+Chinstrap (species) was indicated as green dots. 
+Gentoo (species) was indicated as blue dots. 
+The graphic shows the clustering of these species at particular space on the plot. 
+
+ggsave comment was to save to scatterplot on PDF from on our file. 
+
+# Problem_2
 
 ```{r problem_2}
-library(tidyverse)
 
 Data_frame = tibble(
   vec_norm = rnorm(10),
@@ -49,10 +65,13 @@ Data_frame = tibble(
   vec_char = c("a", "b", "c", "a", "b", "c", "a", "b", "c", "d"),
   vec_factor = factor(c("low", "medium", "high", "low", "medium", "high",
                         "low", "medium", "high", "low"), levels= c( "low", "medium", "high"))
-
 )
-  
+
+Data_frame 
 ```
+
+Data frame was created using tibble function. 
+
 
 ```{r}
 
@@ -74,16 +93,7 @@ as.numeric(pull(Data_frame, vec_factor))
 
 ```
 
-After using `as.numeric(pull(Data_frame, vec_logical))` for logical vector it lists the 
+After using `as.numeric(pull(Data_frame, vec_logical))` for logical vector it lists the o and 1. When i apply logical factor R supplies value 0 is signed to false and 1 to true. I allows us to interpret these values as proportions. For instance, mean for logical was 0.2 that means 2 of the values were true
 
-When i supply logical factor R supplies value 0 is signed to false and value 1 is signed to true. I allows us to interpret these values as proportions. For instance, mean for logical was 0.2 that means 2 of the values were true.
-
-
-
-
-Some  freaction of population was given the 
-
-
-
-For apppying as. numeric command for logical, character and factor variables, this convering charater an
+Appying `as. numeric` command for logical, character and factor variables, it converts charater values to numeric . So that now R knows that mean can be calculated were was it was not possible in the previous mean command. Not the nean of `as.numeric(pull(Data_frame, vec_factor))` can be calculated where as it was not possible with previous just mean command.  
 
