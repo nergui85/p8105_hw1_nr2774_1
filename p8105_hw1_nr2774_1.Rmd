@@ -51,14 +51,34 @@ Data_frame = tibble(
                         "low", "medium", "high", "low"), levels= c( "low", "medium", "high"))
 
 )
-
-mean (Data_frame$vec_norm, na.rm = TRUE)
-mean (Data_frame$vec_logical, na.rm = TRUE)
-mean (Data_frame$vec_char, na.rm = TRUE)
-mean (Data_frame$factor, na.rm = TRUE)
-
   
 ```
+
+```{r}
+
+mean(pull(Data_frame, vec_norm))
+mean(pull(Data_frame, vec_logical))
+mean(pull(Data_frame, vec_char))
+mean(pull(Data_frame, vec_factor))
+     
+```
+
+
+
+```{r}
+
+as.numeric(pull(Data_frame, vec_norm))
+as.numeric(pull(Data_frame, vec_logical))
+as.numeric(pull(Data_frame, vec_char))
+as.numeric(pull(Data_frame, vec_factor))
+
+```
+
+After using `as.numeric(pull(Data_frame, vec_logical))` for logical 
+
+For apppying as. numeric command for logical, character and factor variables, this convering charater an
+
+
 
 **Take the mean of vec for logical indicates that proprtion of people 
 who got the treatment 
