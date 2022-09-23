@@ -10,12 +10,25 @@ output: github_document
 ```{r}
 data("penguins", package = "palmerpenguins")
 penguins
+
+nrow(penguins)
+
+ncol(penguins)
+
+
+
+
 ```
 
 - ?? the data in this dataset, including names / values of important variables
 
-Data in this dataset is about penguins which are Adeilie types and are from island called Torgersen. 
+- Data in this dataset is about penguins which are Adeilie types and are from island called Torgersen. 
 Valeues are included bill length, bill depth, flipper length and body mass , sex, and year. 
+
+- The number of rows are 344
+  The number of colums are 8 
+
+
 
 
 
