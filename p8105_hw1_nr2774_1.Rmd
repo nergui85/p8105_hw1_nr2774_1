@@ -74,37 +74,16 @@ as.numeric(pull(Data_frame, vec_factor))
 
 ```
 
-After using `as.numeric(pull(Data_frame, vec_logical))` for logical 
+After using `as.numeric(pull(Data_frame, vec_logical))` for logical vector it lists the 
+
+When i supply logical factor R supplies value 0 is signed to false and value 1 is signed to true. I allows us to interpret these values as proportions. For instance, mean for logical was 0.2 that means 2 of the values were true.
+
+
+
+
+Some  freaction of population was given the 
+
+
 
 For apppying as. numeric command for logical, character and factor variables, this convering charater an
 
-
-
-**Take the mean of vec for logical indicates that proprtion of people 
-who got the treatment 
-
-
-The purpose of this file is to present a couple of basic plots using `ggplot`.
-
-First we create a dataframe containing variables for our plots.
-
-```{r df_create}
-set.seed(1234)
-
-plot_df = tibble(
-  x = rnorm(1000, sd = .5),
-  y = 1 + 2 * x + rnorm(1000)
-)
-    ```
-
-First we show a histogram of the `x` variable.
-
-```{r x_hist}
-ggplot(plot_df, aes(x = x)) + geom_histogram()
-```
-
-Next we show a scatterplot of `y` vs `x`. 
-
-```{r yx_scatter}
-ggplot(plot_df, aes(x = x, y = y)) + geom_point()
-```
