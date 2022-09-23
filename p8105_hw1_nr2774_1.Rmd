@@ -1,0 +1,50 @@
+---
+title: "HW_1"
+author: "nr2774"
+date: 2022-09-22
+output: github_document
+---
+
+# Problem_1 ####
+
+```{r}
+data("penguins", package = "palmerpenguins")
+penguins
+```
+
+- ?? the data in this dataset, including names / values of important variables
+
+Data in this dataset is about penguins which are Adeilie types and are from island called Torgersen. 
+Valeues are included bill length, bill depth, flipper length and body mass , sex, and year. 
+
+
+
+
+```{r setup, include = FALSE}
+library(tidyverse)
+```
+
+The purpose of this file is to present a couple of basic plots using `ggplot`.
+
+First we create a dataframe containing variables for our plots.
+
+```{r df_create}
+set.seed(1234)
+
+plot_df = tibble(
+  x = rnorm(1000, sd = .5),
+  y = 1 + 2 * x + rnorm(1000)
+)
+```
+
+First we show a histogram of the `x` variable.
+
+```{r x_hist}
+ggplot(plot_df, aes(x = x)) + geom_histogram()
+```
+
+Next we show a scatterplot of `y` vs `x`. 
+
+```{r yx_scatter}
+ggplot(plot_df, aes(x = x, y = y)) + geom_point()
+```
